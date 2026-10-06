@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hazel Larcena | Cloud & Application Support | Front-End Developer</title>
+<meta name="description" content="Portfolio of Hazel Larcena: IT graduate with experience in Azure, AWS, Windows Server, ServiceNow (ITSM), UI/UX design and front-end web development.">
+<meta property="og:title" content="Hazel Larcena | Portfolio">
+<meta property="og:description" content="Cloud & application support, ITSM, UI/UX and front-end development.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2F5071">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f8fa; --surface:#ffffff; --text:#1c2733; --muted:#5b6876;
+  --accent:#2F5071; --accent-soft:#e6edf4; --line:#dde3ea; --hero:#2F5071; --hero-text:#ffffff;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1720; --surface:#16212d; --text:#e8edf2; --muted:#9aa8b6;
+    --accent:#8fb4d9; --accent-soft:#1d2e3f; --line:#25354a; --hero:#16212d; --hero-text:#ffffff;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1720; --surface:#16212d; --text:#e8edf2; --muted:#9aa8b6;
+  --accent:#8fb4d9; --accent-soft:#1d2e3f; --line:#25354a; --hero:#16212d; --hero-text:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.2}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-family:Fraunces,Georgia,serif;font-weight:700;color:var(--text);font-size:1.1rem}
+.links{display:flex;gap:18px;align-items:center;font-size:.9rem}
+.links a{color:var(--muted)}
+.links a:hover{color:var(--accent);text-decoration:none}
+#theme{background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:4px 9px;cursor:pointer;font-size:.9rem}
+@media(max-width:640px){.links a.hide-m{display:none}}
+
+/* hero */
+.hero{background:var(--hero);color:var(--hero-text);padding:72px 0 64px}
+.hero .tag{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8;margin-bottom:14px}
+.hero h1{font-size:clamp(2.2rem,6vw,3.6rem);margin-bottom:14px}
+.hero p.lead{max-width:640px;font-size:1.1rem;opacity:.92;margin-bottom:28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;font-weight:600;font-size:.95rem;border:1.5px solid #fff;color:#fff}
+.btn.solid{background:#fff;color:#2F5071}
+.btn:hover{text-decoration:none;opacity:.9}
+.meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:.9rem;opacity:.85}
+
+/* sections */
+section{padding:60px 0}
+section+section{border-top:1px solid var(--line)}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:6px}
+h2{font-size:1.8rem;margin-bottom:22px}
+.about p{max-width:720px;color:var(--text);margin-bottom:14px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:26px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.stat b{display:block;font-family:Fraunces,Georgia,serif;font-size:1.35rem;color:var(--accent)}
+.stat span{font-size:.85rem;color:var(--muted)}
+
+/* skills */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{font-size:1.1rem;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:4px 11px;font-size:.82rem;font-weight:500}
+
+/* timeline */
+.job{position:relative;padding:0 0 30px 26px;border-left:2px solid var(--line);margin-left:6px}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.job .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px}
+.job h3{font-size:1.15rem}
+.job .when{color:var(--muted);font-size:.9rem;font-weight:500}
+.job .org{color:var(--accent);font-weight:600;margin:2px 0 10px}
+.job ul{padding-left:18px;color:var(--text)}
+.job li{margin-bottom:6px}
+
+/* education + certs */
+.edu{display:grid;gap:12px;margin-bottom:34px}
+.edu .row{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px}
+.edu .row b{display:block}
+.edu .row span{color:var(--muted);font-size:.92rem}
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.cert{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.92rem}
+.cert small{display:block;color:var(--muted);margin-top:3px}
+
+/* contact */
+.contact{text-align:center}
+.contact p{color:var(--muted);max-width:520px;margin:0 auto 22px}
+.contact .btn{border-color:var(--accent);color:var(--accent)}
+.contact .btn.solid{background:var(--accent);color:var(--bg)}
+footer{padding:26px 0;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+
+@media print{nav,.btns,#theme{display:none}.hero{background:none;color:#000;padding:20px 0}section{padding:20px 0}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">HL</a>
+    <div class="links">
+      <a class="hide-m" href="#about">About</a>
+      <a class="hide-m" href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a class="hide-m" href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" aria-label="Toggle dark mode">◐</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="tag">Portfolio</div>
+    <h1>Hazel Larcena</h1>
+    <p class="lead">IT graduate in cloud &amp; application support, IT service management, and front-end web design. I keep systems running and turn user needs into clean, usable interfaces.</p>
+    <div class="btns">
+      <a class="btn solid" href="Hazel_Larcena_Resume.pdf" download>Download Resume</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+    <div class="meta">
+      <span>📍 Carmona, Cavite, Philippines</span>
+      <span>✉️ larcenahazel.saringo@gmail.com</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="eyebrow">About</div>
+    <h2>Hands-on with cloud, ITSM, and the front end</h2>
+    <p>I'm a results-driven Information Technology graduate with hands-on experience in cloud and application support across Microsoft Azure and Amazon Web Services, Windows Server administration, Active Directory, patch management, and ServiceNow-based IT Service Management.</p>
+    <p>Alongside operations work, I design and build responsive front-end experiences with UI/UX principles, WordPress, and Figma. I enjoy troubleshooting, handling incidents and service requests, and translating business or user requirements into practical technical solutions.</p>
+    <div class="stats">
+      <div class="stat"><b>Azure + AWS</b><span>Cloud support experience</span></div>
+      <div class="stat"><b>ServiceNow</b><span>ITSM &amp; incident handling</span></div>
+      <div class="stat"><b>UI/UX</b><span>Figma &amp; front-end builds</span></div>
+      <div class="stat"><b>ITIL 4</b><span>Foundation training</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow">Skills</div>
+    <h2>Tools &amp; technologies</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Cloud &amp; Infrastructure</h3>
+        <div class="chips">
+          <span class="chip">Microsoft Azure</span><span class="chip">Amazon Web Services (AWS)</span><span class="chip">Cloud Support</span>
+          <span class="chip">Windows Server</span><span class="chip">Active Directory (ADUC)</span><span class="chip">Patch Management</span><span class="chip">System Updates</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>IT Operations &amp; Support</h3>
+        <div class="chips">
+          <span class="chip">ServiceNow</span><span class="chip">ITSM</span><span class="chip">Incident Management</span>
+          <span class="chip">Service Requests</span><span class="chip">Technical Troubleshooting</span><span class="chip">Microsoft Office</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Web Development &amp; Design</h3>
+        <div class="chips">
+          <span class="chip">Front-End Development</span><span class="chip">UI/UX Design</span><span class="chip">Web Design</span>
+          <span class="chip">WordPress</span><span class="chip">Figma</span><span class="chip">PHP</span><span class="chip">OOP Fundamentals</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow">Experience</div>
+    <h2>Where I've worked</h2>
+
+    <div class="job">
+      <div class="top"><h3>Associate Software Engineer, App / Cloud Support</h3><span class="when">2024 – 2026</span></div>
+      <div class="org">Accenture Inc.</div>
+      <ul>
+        <li>Provided cloud and application support and performed infrastructure maintenance across Azure and AWS environments to support availability and performance.</li>
+        <li>Tracked, triaged, documented, and resolved incidents and service requests in ServiceNow following ITSM workflows.</li>
+        <li>Performed patch management, system updates, and Windows Server administration to support security compliance and stability.</li>
+        <li>Managed user and computer accounts using Active Directory Users and Computers (ADUC).</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="top"><h3>Freelance UI/UX &amp; Front-End Developer</h3><span class="when">2024 – 2025</span></div>
+      <div class="org">Neuralcore</div>
+      <ul>
+        <li>Designed user-centric interfaces using UI/UX and web design principles.</li>
+        <li>Developed responsive front-end experiences for multiple devices and screen sizes.</li>
+        <li>Worked with clients to turn requirements into functional, visually consistent digital experiences.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="top"><h3>Service Crew / Guest Experience Leader</h3><span class="when">Aug 2024 – Jan 2025</span></div>
+      <div class="org">Golden Arches Development Corporation</div>
+      <ul>
+        <li>Delivered customer service and supported front-line operations in a fast-paced environment.</li>
+        <li>Collaborated with the team to maintain efficient daily workflows and service standards.</li>
+        <li>Handled customer inquiries and resolved concerns promptly.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!--
+  PROJECTS (optional): when you have projects to show, paste this block after the Experience section
+  and fill it in.
+
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow">Projects</div>
+    <h2>Selected work</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Project name</h3>
+        <p style="color:var(--muted);margin-bottom:12px">One or two sentences about what it does and your role.</p>
+        <div class="chips"><span class="chip">Figma</span><span class="chip">HTML/CSS</span></div>
+        <p style="margin-top:12px"><a href="https://github.com/YOUR-USERNAME/REPO">View on GitHub →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<section id="education">
+  <div class="wrap">
+    <div class="eyebrow">Education</div>
+    <h2>Education &amp; certifications</h2>
+    <div class="edu">
+      <div class="row"><div><b>Bachelor of Science in Information Technology</b><span>Cavite State University – Carmona Campus</span></div><span>2019 – 2024</span></div>
+      <div class="row"><div><b>ICT – Mobile and Web Development</b><span>STI College Carmona</span></div><span>2017 – 2019</span></div>
+    </div>
+    <div class="certs">
+      <div class="cert">WordPress Fundamentals – CMS<small>Alison / The CPD Certification Service · Sep 2026 · ID 4478-60511041</small></div>
+      <div class="cert">Microsoft Azure Fundamentals: Azure Files<small>Company Training · Jul 2026</small></div>
+      <div class="cert">Design Patterns &amp; SOLID Principles<small>Company Training · Apr 2025</small></div>
+      <div class="cert">CompTIA Cloud Essentials+: Essential Cloud Principles<small>Company Training · Apr 2025</small></div>
+      <div class="cert">ITIL 4 Foundation: Introduction<small>Company Training · Sep 2024</small></div>
+      <div class="cert">ITIL 4 Foundation: Key Concepts of Service Management<small>Company Training · Sep 2024</small></div>
+      <div class="cert">PHP Object-Oriented Programming Basics<small>Online Training · 2022</small></div>
+      <div class="cert">Web Application Development, I.T Works Development Team<small>Online Training · 2021</small></div>
+      <div class="cert">Figma Unlocking Enigma for Beginners<small>Workshop · 2021</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2>Let's work together</h2>
+    <p>I'm open to cloud support, IT operations, and front-end opportunities. Send me a message or grab my resume.</p>
+    <div class="btns" style="justify-content:center">
+      <a class="btn solid" href="mailto:larcenahazel.saringo@gmail.com">Email me</a>
+      <a class="btn" href="Hazel_Larcena_Resume.pdf" download>Download Resume</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>© <span id="yr">2026</span> Hazel Larcena · Carmona, Cavite, Philippines</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+(function(){
+  var root = document.documentElement, key = 'theme';
+  try { var s = localStorage.getItem(key); if (s) root.setAttribute('data-theme', s); } catch(e){}
+  document.getElementById('theme').addEventListener('click', function(){
+    var dark = root.getAttribute('data-theme') === 'dark' ||
+      (!root.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem(key, next); } catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
